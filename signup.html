@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Signup | Mini Designers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body{
       font-family: Arial, sans-serif;
@@ -43,16 +44,39 @@
     }
   </style>
 </head>
+
 <body>
 
-  <div class="box">
-    <h2>Signup</h2>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
-    <button>Create Account</button>
-    <a href="login.html">Already have account?</a>
-  </div>
+<div class="box">
+  <h2>Signup</h2>
+
+  <input type="text" id="name" placeholder="Full Name">
+  <input type="email" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="signup()">Create Account</button>
+
+  <a href="login.html">Already have account?</a>
+</div>
+
+<script>
+function signup(){
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
+
+  if(name==="" || email==="" || password===""){
+    alert("Sab fields bharo");
+    return;
+  }
+
+  localStorage.setItem("md_email", email);
+  localStorage.setItem("md_password", password);
+
+  alert("Signup Successful!");
+  window.location.href = "login.html";
+}
+</script>
 
 </body>
 </html>
