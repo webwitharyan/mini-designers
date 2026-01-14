@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Mini Designers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f4f4;
+    }
+    header{
+      background:#000;
+      color:#fff;
+      padding:12px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    header button{
+      background:#00c896;
+      border:none;
+      padding:6px 12px;
+      border-radius:5px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .container{
+      padding:20px;
+    }
+    .cards{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+    .card{
+      background:#fff;
+      width:260px;
+      padding:15px;
+      border-radius:10px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    }
+    .card button{
+      width:100%;
+      margin-top:10px;
+      padding:8px;
+      background:#000;
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <b>Mini Designers – Dashboard</b>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<div class="container">
+  <h2>Welcome, Designer 👋</h2>
+  <p>Your thumbnails & earnings</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Upload Thumbnail</h3>
+      <p>Sell your design for ₹400</p>
+      <button onclick="alert('Upload system coming soon 🚀')">Upload</button>
+    </div>
+
+    <div class="card">
+      <h3>My Earnings</h3>
+      <p>Total: ₹0</p>
+      <button onclick="alert('Earnings system coming soon 💰')">View</button>
+    </div>
+
+    <div class="card">
+      <h3>My Thumbnails</h3>
+      <p>No uploads yet</p>
+      <button onclick="alert('Feature coming soon 😎')">View</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function logout(){
+    window.location.href = "login.html";
+  }
+</script>
+
+</body>
+</html>
