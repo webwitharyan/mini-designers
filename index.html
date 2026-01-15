@@ -1,46 +1,210 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Mini Designers</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f5f7fb;
-      padding: 20px;
-    }
+<meta charset="UTF-8">
+<title>Thumbsell – Mini Designers</title>
 
-    .card {
-      width: 200px;
-      background: white;
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ddd;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f6fb;
+}
 
-    img {
-      width: 100%;
-      border-radius: 8px;
-    }
+/* NAVBAR */
+.nav{
+  background:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+.nav h2{color:#2563eb;margin:0}
+.nav button{
+  margin-left:10px;
+  padding:8px 14px;
+  border:none;
+  background:#2563eb;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+}
 
-    button {
-      width: 100%;
-      padding: 8px;
-      background: blue;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+/* SEARCH */
+.search{
+  padding:20px;
+  text-align:center;
+}
+.search input{
+  width:70%;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+  font-size:16px;
+}
+
+/* CATEGORY */
+.categories{
+  text-align:center;
+  margin-bottom:20px;
+}
+.categories button{
+  margin:5px;
+  padding:8px 14px;
+  border:none;
+  border-radius:6px;
+  background:#e5e7eb;
+  cursor:pointer;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+  padding:20px;
+}
+.card{
+  background:white;
+  padding:10px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,.08);
+}
+.card img{
+  width:100%;
+  border-radius:8px;
+  height:140px;
+  object-fit:cover;
+}
+.price{
+  font-weight:bold;
+  margin:10px 0;
+}
+.card button{
+  width:100%;
+  padding:10px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* LOGIN */
+.popup{
+  display:none;
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:rgba(0,0,0,.5);
+}
+.popup-box{
+  background:white;
+  width:300px;
+  margin:100px auto;
+  padding:20px;
+  border-radius:10px;
+}
+.popup-box input{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+}
+.popup-box button{
+  width:100%;
+  padding:10px;
+  background:#2563eb;
+  color:white;
+  border:none;
+  border-radius:6px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:15px;
+  color:gray;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="card">
-    <img src="thumb.jpg">
-    <p>₹400</p>
-    <button>Buy</button>
+<!-- NAVBAR -->
+<div class="nav">
+  <h2>Thumbsell</h2>
+  <div>
+    <button onclick="openLogin()">Login</button>
+    <button onclick="openLogin()">Signup</button>
   </div>
+</div>
+
+<!-- SEARCH -->
+<div class="search">
+  <input type="text" placeholder="Search thumbnails...">
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+  <button>Gaming</button>
+  <button>Vlog</button>
+  <button>Tech</button>
+  <button>Education</button>
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x180">
+    <div class="price">₹400</div>
+    <a href="https://t.me/yourtelegramusername" target="_blank">
+      <button>Buy</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x180">
+    <div class="price">₹350</div>
+    <a href="https://t.me/yourtelegramusername" target="_blank">
+      <button>Buy</button>
+    </a>
+  </div>
+
+  <div class="card">
+    <img src="https://via.placeholder.com/300x180">
+    <div class="price">₹500</div>
+    <a href="https://t.me/yourtelegramusername" target="_blank">
+      <button>Buy</button>
+    </a>
+  </div>
+
+</div>
+
+<!-- LOGIN POPUP -->
+<div class="popup" id="login">
+  <div class="popup-box">
+    <h3>Login / Signup</h3>
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+    <button onclick="closeLogin()">Continue</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 Thumbsell | Buy & Sell Thumbnails
+</footer>
+
+<script>
+function openLogin(){
+  document.getElementById("login").style.display="block";
+}
+function closeLogin(){
+  document.getElementById("login").style.display="none";
+}
+</script>
 
 </body>
 </html>
